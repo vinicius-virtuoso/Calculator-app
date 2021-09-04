@@ -16,6 +16,8 @@ html.oneTheme:root {
   --Very-dark-grayish: hsl(221, 14%, 31%);
   --White: #ffffff;
   --TextTheme: #fff;
+  --TextTheme3: #fff;
+  --TextTheme2: hsl(221, 14%, 31%);
 }
 html.twoTheme:root {
    /* background */
@@ -34,7 +36,10 @@ html.twoTheme:root {
    /* Text */
    --Very-dark-grayish: hsl(60, 10%, 19%);
    --White: hsl(0, 0%, 100%);
-   --TextTheme: hsl(60, 10%, 19%);
+   --TextTheme: #35352c;
+   --TextTheme2: #35352c;
+  --TextTheme3: #fff;
+
 }
 html.threeTheme:root {
    /* background */
@@ -55,36 +60,43 @@ html.threeTheme:root {
    --Very-dark-grayish: hsl(198, 20%, 13%);
    --White: #ffffff;
    --TextTheme: hsl(52, 100%, 62%);
+   --TextTheme2: hsl(52, 100%, 62%);
+  --TextTheme3: hsl(198, 20%, 13%);
+
 }
-
-
-
 *{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   text-decoration: none;
 }
+html {
+  font-size: 62.5%;
+}
 body {
   min-height: 100vh;
   background-color: var(--Very-dark-blue-main-background);
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: center;
   flex-direction: column;
-  font-family: 'Gill Sans', sans-serif;
+  font-family: 'Spartan', sans-serif;
   transition: all .2s ease;
 }
+.container {
+  width: 100%;
+  max-width: 55rem;
+}
+
+/* START header options*/
 .boxTheme {
   display: flex;
   width: 100%;
-  max-width: 600px;
   align-items: center;
   justify-content: flex-end;
 }
 .boxTheme h1{
-  font-size: 1.5rem;
-  font-weight: lighter;
+  font-size: 3.5rem;
   flex: 1;
   color: var(--TextTheme);
 }
@@ -93,32 +105,31 @@ body {
   grid-template-columns: repeat(2,1fr);
   justify-content: space-between;
   text-align: center;
-  font-size: 1rem;
+  font-size: 1.6rem;
   cursor: pointer;
 }
 .boxToggle p{
-  font-size: 1rem;
-  margin-right: 40px;
+  font-size: 1.6rem;
+  margin-right: 4rem;
   align-self: flex-end;
   color: var(--TextTheme);
 }
 .boxButtonTheme {
   display: grid;
-  width: 80px;
+  width: 100%;
 }
 .boxButtonTheme span{
   color: var(--TextTheme);
 }
-
 .toggleContainer {
   display: flex;
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  padding:5px;
-  height: 30px;
+  padding:.5rem;
+  height: 3rem;
   background: var(--Very-dark-keypad-background);
-  border-radius: 50px;
+  border-radius: 5rem;
   position: relative;
   grid-column: span 3;
 }
@@ -126,9 +137,9 @@ body {
   cursor: pointer;
 }
 .toggleContainer span{
-  width: 20px;
-  height: 20px;
-  background:  var(--Red-key-background-toggle);
+  width: 2rem;
+  height: 2rem;
+  background:var(--Red-key-background-toggle);
   border-radius: 50%;
   transition: .3s ease;
   position: absolute;
@@ -141,4 +152,93 @@ body {
 }
 .toggleContainer span.threeTheme{
   left: 80%;
+}
+/* END header options*/
+
+/* INIT SCREEN RESULT */
+.screenNumber {
+  width: 100%;
+  background: var(--Very-dark-blue-screen-background);
+  font-size: 4.5rem;
+  border-radius: 1rem;
+  padding: 2.5rem;
+  text-align: right;
+  color: var(--TextTheme);
+  margin: 3rem 0;
+}
+/* END SCREEN RESULT */
+
+/* INIT KEYBOARD BUTTONS */
+.keyBoard {
+  background: var(--Very-dark-keypad-background);
+  padding: 2.5rem;
+  border-radius: 1rem;
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  gap:2.5rem;
+  width: 100%;
+}
+.keyBoard button {
+  font-size: 3.2rem;
+  font-family: 'Spartan', sans-serif;
+  padding: 1rem 2rem;
+  border: 0;
+  cursor: pointer;
+  background: var(--Light-grayish-orange-key-background);
+  color: var(--TextTheme2);
+  border-radius: 1rem;
+  box-shadow: 0 .5rem var(--Grayish-orange-key-shadow);
+}
+.keyBoard button:nth-of-type(4):active,
+.keyBoard button:active {
+  position: relative;
+  top: 5px;
+  box-shadow: 0 0rem var(--Desaturated-dark-blue2-key-shadow);
+}
+.keyBoard button:nth-of-type(4),
+.keyBoard button:nth-of-type(17) {
+  background: var(--Desaturated-dark-blue-key-background);
+  color: var(--White);
+  box-shadow: 0 .5rem var(--Desaturated-dark-blue2-key-shadow);
+}
+.keyBoard button:nth-of-type(17) {
+  font-size: 2.5rem;
+  grid-column: span 2;
+}
+.keyBoard button:nth-of-type(18) {
+  background: var(--Red-key-background-toggle);
+  color: var(--TextTheme3);
+  box-shadow: 0 .5rem var(--Dark-red-key-shadow);
+  grid-column: span 2;
+}
+/* END KEYBOARD BUTTONS */
+
+
+@media (max-width: 768px) {
+  body {
+    padding: 1.6rem;
+  }
+  .boxToggle p{
+    margin-right: 1rem;
+    align-self: center;
+    margin-top: 25px;
+  }
+  .keyBoard button {
+    font-size: 1.6rem;
+    padding: 1rem 1.6rem;
+  }
+}
+@media (max-width: 368px) {
+  .screenNumber {
+    padding: 1rem;
+  }
+  .keyBoard {
+    padding: 1rem;
+    gap: 1rem;
+  }
+  .keyBoard button:nth-of-type(17) {
+    font-size: 1.5rem;
+    grid-column: span 2;
+  }
+  
 }
