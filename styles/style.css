@@ -1,0 +1,144 @@
+html.oneTheme:root {
+  /* background */
+  --Very-dark-blue-main-background:hsl(222,26%,31%);
+  --Very-dark-keypad-background:hsl(223,31%,20%);
+  --Very-dark-blue-screen-background:hsl(224, 36%, 15%);
+
+  /* Keys */
+  --Desaturated-dark-blue-key-background:hsl(225,21%,49%);
+  --Desaturated-dark-blue2-key-shadow:hsl(224,28%,35%);
+  --Red-key-background-toggle:hsl(6,63%,50%);
+  --Dark-red-key-shadow:hsl(6,70%,34%);
+  --Light-grayish-orange-key-background:hsl(30,25%,89%);
+  --Grayish-orange-key-shadow:hsl(28,16%,65%);
+
+  /* Text */
+  --Very-dark-grayish: hsl(221, 14%, 31%);
+  --White: #ffffff;
+  --TextTheme: #fff;
+}
+html.twoTheme:root {
+   /* background */
+   --Very-dark-blue-main-background:hsl(0, 0%, 90%);
+   --Very-dark-keypad-background:hsl(0, 5%, 81%);
+   --Very-dark-blue-screen-background:hsl(0, 0%, 93%);
+ 
+   /* Keys */
+   --Desaturated-dark-blue-key-background:hsl(185, 42%, 37%);
+   --Desaturated-dark-blue2-key-shadow:hsl(185, 58%, 25%);
+   --Red-key-background-toggle:hsl(25, 98%, 40%);
+   --Dark-red-key-shadow:hsl(25, 99%, 27%);
+   --Light-grayish-orange-key-background:hsl(45, 7%, 89%);
+   --Grayish-orange-key-shadow:hsl(35, 11%, 61%);
+   
+   /* Text */
+   --Very-dark-grayish: hsl(60, 10%, 19%);
+   --White: hsl(0, 0%, 100%);
+   --TextTheme: hsl(60, 10%, 19%);
+}
+html.threeTheme:root {
+   /* background */
+   --Very-dark-blue-main-background:hsl(268, 75%, 9%);
+   --Very-dark-keypad-background: hsl(268, 71%, 12%);
+   --Very-dark-blue-screen-background:hsl(268, 71%, 12%);
+ 
+   /* Keys */
+   --Desaturated-dark-blue-key-background:hsl(281, 89%, 26%);
+   --Desaturated-dark-blue2-key-shadow:hsl(285, 91%, 52%);
+   --Red-key-background-toggle:hsl(176, 100%, 44%);
+   --Dark-red-key-shadow:hsl(177, 92%, 70%);
+   --Light-grayish-orange-key-background:hsl(268, 47%, 21%);
+   --Grayish-orange-key-shadow:hsl(290, 70%, 36%);
+ 
+   /* Text */
+   --Light-yellow: hsl(52, 100%, 62%);
+   --Very-dark-grayish: hsl(198, 20%, 13%);
+   --White: #ffffff;
+   --TextTheme: hsl(52, 100%, 62%);
+}
+
+
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+body {
+  min-height: 100vh;
+  background-color: var(--Very-dark-blue-main-background);
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: column;
+  font-family: 'Gill Sans', sans-serif;
+  transition: all .2s ease;
+}
+.boxTheme {
+  display: flex;
+  width: 100%;
+  max-width: 600px;
+  align-items: center;
+  justify-content: flex-end;
+}
+.boxTheme h1{
+  font-size: 1.5rem;
+  font-weight: lighter;
+  flex: 1;
+  color: var(--TextTheme);
+}
+.boxToggle {
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  justify-content: space-between;
+  text-align: center;
+  font-size: 1rem;
+  cursor: pointer;
+}
+.boxToggle p{
+  font-size: 1rem;
+  margin-right: 40px;
+  align-self: flex-end;
+  color: var(--TextTheme);
+}
+.boxButtonTheme {
+  display: grid;
+  width: 80px;
+}
+.boxButtonTheme span{
+  color: var(--TextTheme);
+}
+
+.toggleContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding:5px;
+  height: 30px;
+  background: var(--Very-dark-keypad-background);
+  border-radius: 50px;
+  position: relative;
+  grid-column: span 3;
+}
+.toggleContainer span {
+  cursor: pointer;
+}
+.toggleContainer span{
+  width: 20px;
+  height: 20px;
+  background:  var(--Red-key-background-toggle);
+  border-radius: 50%;
+  transition: .3s ease;
+  position: absolute;
+  transform: translate(-50%,-50%);
+  left: 20%;
+  top: 50%
+}
+.toggleContainer span.twoTheme{
+  left: 50%;
+}
+.toggleContainer span.threeTheme{
+  left: 80%;
+}
