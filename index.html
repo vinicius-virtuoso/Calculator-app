@@ -12,11 +12,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Spartan:wght@700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles/style.css" />
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <!-- <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style> -->
+  
 </head>
 <body>
   
@@ -37,43 +33,44 @@
     </div>
 
     <div class="container screenNumber">
-      <p>0</p>
+      <p></p>
     </div>
     <div class=" container keyBoard">
-      <button key="7"> 7 </button>
-      <button key="8"> 8 </button>
-      <button key="9"> 9 </button>
-      <button key="dell"> DEL </button>
+      <button key="7" onclick="insert('7')"> 7 </button>
+      <button key="8" onclick="insert('8')"> 8 </button>
+      <button key="9" onclick="insert('9')"> 9 </button>
+      <button key="dell" onclick="del()"> DEL </button>
 
-      <button key="4"> 4 </button>
-      <button key="5"> 5 </button>
-      <button key="6"> 6 </button>
-      <button key="+"> + </button>
+      <button key="4" onclick="insert('4')"> 4 </button>
+      <button key="5" onclick="insert('5')"> 5 </button>
+      <button key="6" onclick="insert('6')"> 6 </button>
+      <button key="+" onclick="insert('+')"> + </button>
 
-      <button> 1 </button>
-      <button> 2 </button>
-      <button> 3 </button>
-      <button> - </button>
+      <button key="1" onclick="insert('1')"> 1 </button>
+      <button key="2" onclick="insert('2')"> 2 </button>
+      <button key="3" onclick="insert('3')"> 3 </button>
+      <button key="-" onclick="insert('-')"> - </button>
 
-      <button> . </button>
-      <button> 0 </button>
-      <button> / </button>
-      <button> X </button>
+      <button key="." onclick="insert('.')"> . </button>
+      <button key="0" onclick="insert('0')"> 0 </button>
+      <button key="/" onclick="insert('/')"> / </button>
+      <button key="X" onclick="insert('*')"> X </button>
 
-      <button> RESET </button>
-      <button> = </button>
+      <button onclick="reset()"> RESET </button>
+      <button onclick="calcular()"> = </button>
     </div>
 
-
-
+    
+    <div class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+      Coded by <a href="https://github.com/ViniciusViruoso">Vinicius Virtuoso</a>.
+    </div>
+    
 
     <script src="./js/Theme.js"></script>
+    <script src="./js/Calc.js"></script>
 
 
   
-  <!-- <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div> -->
 </body>
 </html>

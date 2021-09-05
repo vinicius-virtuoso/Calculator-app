@@ -81,7 +81,6 @@ body {
   justify-content: center;
   flex-direction: column;
   font-family: 'Spartan', sans-serif;
-  transition: all .2s ease;
 }
 .container {
   width: 100%;
@@ -165,6 +164,10 @@ body {
   text-align: right;
   color: var(--TextTheme);
   margin: 3rem 0;
+  overflow-y: hidden;
+  overflow-x: auto;
+  min-height: calc(5.4rem + 5rem);
+  max-height: calc(5.4rem + 5rem);
 }
 /* END SCREEN RESULT */
 
@@ -214,6 +217,19 @@ body {
 /* END KEYBOARD BUTTONS */
 
 
+.attribution { 
+  font-size: 11px; 
+  text-align: center;
+  margin-top: 20px;
+  background: var(--Very-dark-blue-screen-background);
+  padding: 10px;
+  border-radius: 5px;
+ }
+.attribution a { 
+  color: var(--TextTheme);
+ }
+
+
 @media (max-width: 768px) {
   body {
     padding: 1.6rem;
@@ -231,6 +247,7 @@ body {
 @media (max-width: 368px) {
   .screenNumber {
     padding: 1rem;
+    min-height: calc(5.4rem + 2rem);
   }
   .keyBoard {
     padding: 1rem;
